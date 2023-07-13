@@ -23,6 +23,7 @@ contract Bank is ReentrancyGuard {
         // once the line above this is hit, the receive function in attacker is called next.
         // The code cannot get to the next line because receive function continues to be called recursively
         // and it is just arbitraly sending an amount from the bank to the attacker
+        // the nonReentrant modifier prevents Reentrancy from occuring and breaks the test
         balanceOf[msg.sender] = 0;
     }
 }
