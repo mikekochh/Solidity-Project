@@ -34,6 +34,7 @@ contract FlashLoanReceiver {
 
 
         // Returns funds to pool
+        require(Token(_tokenAddress).transfer(msg.sender, _amount), "Transfer of tokens failed");
     }
 
 }
